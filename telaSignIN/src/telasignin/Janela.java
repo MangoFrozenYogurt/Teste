@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package telasignin;
-
+import java.awt.Image;
 /**
  *
  * @author fabricio.jc
  */
 public class Janela extends javax.swing.JFrame {
     java.awt.CardLayout cl;
+    javax.swing.ImageIcon image;
     /**
      * Creates new form Janela
      */
@@ -34,7 +35,7 @@ public class Janela extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        tela_entrar = new javax.swing.JPanel();
+        tela_cadast = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jTextField4 = new javax.swing.JTextField();
@@ -43,7 +44,10 @@ public class Janela extends javax.swing.JFrame {
         jPasswordField2 = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        tela_cadastrar = new javax.swing.JPanel();
+        tela_entrar = new javax.swing.JPanel();
+        imag = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,6 +103,11 @@ public class Janela extends javax.swing.JFrame {
         jTextField1.setText("Endereço de email");
 
         jButton3.setText("Cadastrar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jTextField4.setText("Nome");
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
@@ -117,67 +126,100 @@ public class Janela extends javax.swing.JFrame {
 
         jLabel4.setText("Repita a senha: ");
 
-        javax.swing.GroupLayout tela_entrarLayout = new javax.swing.GroupLayout(tela_entrar);
-        tela_entrar.setLayout(tela_entrarLayout);
-        tela_entrarLayout.setHorizontalGroup(
-            tela_entrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tela_entrarLayout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
-                .addGroup(tela_entrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout tela_cadastLayout = new javax.swing.GroupLayout(tela_cadast);
+        tela_cadast.setLayout(tela_cadastLayout);
+        tela_cadastLayout.setHorizontalGroup(
+            tela_cadastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tela_cadastLayout.createSequentialGroup()
+                .addGap(114, 114, 114)
+                .addGroup(tela_cadastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
-                .addGroup(tela_entrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(tela_cadastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton3)
                     .addComponent(jTextField1)
                     .addComponent(jTextField4)
                     .addComponent(jTextField5)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                    .addComponent(jPasswordField2))
-                .addGap(118, 118, 118))
+                    .addComponent(jPasswordField1)
+                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
-        tela_entrarLayout.setVerticalGroup(
-            tela_entrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tela_entrarLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+        tela_cadastLayout.setVerticalGroup(
+            tela_cadastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tela_cadastLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(tela_entrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(tela_cadastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addGroup(tela_entrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(tela_cadastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(24, 24, 24)
                 .addComponent(jButton3)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
-        jPanel1.add(tela_entrar, "card3");
+        jPanel1.add(tela_cadast, "card3");
 
-        javax.swing.GroupLayout tela_cadastrarLayout = new javax.swing.GroupLayout(tela_cadastrar);
-        tela_cadastrar.setLayout(tela_cadastrarLayout);
-        tela_cadastrarLayout.setHorizontalGroup(
-            tela_cadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout tela_entrarLayout = new javax.swing.GroupLayout(tela_entrar);
+        tela_entrar.setLayout(tela_entrarLayout);
+        tela_entrarLayout.setHorizontalGroup(
+            tela_entrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 518, Short.MAX_VALUE)
         );
-        tela_cadastrarLayout.setVerticalGroup(
-            tela_cadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        tela_entrarLayout.setVerticalGroup(
+            tela_entrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 395, Short.MAX_VALUE)
         );
 
-        jPanel1.add(tela_cadastrar, "card2");
+        jPanel1.add(tela_entrar, "card2");
+
+        jButton4.setText("selecionar imagem");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout imagLayout = new javax.swing.GroupLayout(imag);
+        imag.setLayout(imagLayout);
+        imagLayout.setHorizontalGroup(
+            imagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(imagLayout.createSequentialGroup()
+                .addGroup(imagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(imagLayout.createSequentialGroup()
+                        .addGap(206, 206, 206)
+                        .addComponent(jButton4))
+                    .addGroup(imagLayout.createSequentialGroup()
+                        .addGap(154, 154, 154)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(138, Short.MAX_VALUE))
+        );
+        imagLayout.setVerticalGroup(
+            imagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(imagLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton4)
+                .addContainerGap(256, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(imag, "card5");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,6 +240,18 @@ public class Janela extends javax.swing.JFrame {
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         jTextField4.setText("");
     }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        cl.show(jPanel1, "card5");
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        javax.swing.JFileChooser arquivo = new javax.swing.JFileChooser();
+        arquivo.showDialog(jLabel5, "escolha a imagem");
+        image = new javax.swing.ImageIcon(arquivo.getSelectedFile().getAbsolutePath());//PREVIAMENTE DECLARADO COMO ImageIcon
+        jLabel5.setIcon(new javax.swing.ImageIcon(image.getImage().getScaledInstance(jLabel5.getWidth(),jLabel5.getHeight(), Image.SCALE_DEFAULT)));
+	//
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,13 +289,16 @@ public class Janela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel imag;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
@@ -249,7 +306,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JPanel painel_principal;
-    private javax.swing.JPanel tela_cadastrar;
+    private javax.swing.JPanel tela_cadast;
     private javax.swing.JPanel tela_entrar;
     // End of variables declaration//GEN-END:variables
 }
